@@ -11,6 +11,6 @@ Each Jupyter notebook consists of 1 file by Serie which contains the 3 exos that
 
 ### Rendus:
 
-- [Serie 01](google.com)  
+- [Serie 01](https://nbviewer.org/github/David-Kyrat/12M061-ProbaStat-Series/blob/master/Serie01-Rendu.ipynb)  
 
 - [Serie 02](google.com)
