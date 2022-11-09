@@ -57,7 +57,7 @@ def testProba_simulation():
 # sums of n independant Bernoulli trials => === binomial distribution with param B(n, p)
 
 
-def binomial(p, n, k):
+def binomial(n, p, k):
     tmp = np.longfloat(np.math.comb(n, k)) * np.longfloat(p ** k)
     out = np.longfloat((1-p) ** (n-k))
     return tmp * out
@@ -68,9 +68,8 @@ def expected_value(P, ys):
         ys: range of random variable (i.e. != values) """
     return np.array([P(yi)*yi for yi in ys], dtype=np.longfloat).sum()
 
-
 def countWinsBin(p, n):
-    def binml(yi): return binomial(p, n, yi)
+    def binml(yi): return binomial(n, p, yi)
     return expected_value(binml, np.arange(n+1))
 
 
@@ -81,8 +80,8 @@ if __name__ == "__main__":
         n = 700
         p = 0.25
         out = countWinsBin(p, n)
-        k = 25
-        print(f"\n|| Probability of {k} success for {n} trials:", binomial(p, n, k))
+        #k = 25
+        #print(f"\n|| Probability of {k} success for {n} trials:", binomial(p, n, k))
         print(f"\n|| Computed Expected number of points out of {n} trials, (p = {p}) is: ", out)
         print(f"\n|| Actual Expected number of points out of {n} trials, (p = {p}) is: ", countWins(p, n)[0])
         x_plot = range(100, 1001, 100)
@@ -98,6 +97,7 @@ if __name__ == "__main__":
                "Number of success",
                "Expected Value of B(n, p)",
                "Sum of n Bernouilli Trials")
+        plt.show()
         
     except ValueError as ve:
         print("Caught Exception:\n   ", "ValueError:", ve)
