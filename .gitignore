@@ -1,6 +1,11 @@
-ProbaStats-Series-Rendu-Linkpdf.pdf
-.vscode
-.idea
-.ipynb_checkpoints
-__pycache__
-.pytest_cache
+**/ProbaStats-Series-Rendu-Linkpdf.pdf
+
+**/.vscode
+
+
+**/.idea
+**/.ipynb_checkpoints
+
+**/__pycache__
+**/.pytest_cache
+**/.*env*
